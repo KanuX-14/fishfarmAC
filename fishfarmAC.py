@@ -2,19 +2,19 @@
 ## Follow me: twitch.tv/kanux14 ##
 
 from pynput.mouse import Button, Controller
-import keyboard as kb
-import time
-
-wait = time.sleep
-ms = Controller()
+import keyboard
+from time import sleep
+from random import uniform
 bool = False
 
 while True:
-	if kb.is_pressed('z'):
-		bool = not bool
-		wait(0.5)
-		ms.click(Button.right, 1)
-	if bool == True:
-		ms.press(Button.right)
-	if kb.is_pressed('f12'):
-		break
+  if keyboard.is_pressed('f4'):
+    bool = not bool
+    sleep(1)
+    Controller().click(Button.right, 1)
+  if bool == True:
+    Controller().press(Button.right)
+    sleep(uniform(0,0.47))
+  if keyboard.is_pressed('f12'):
+    break
+  sleep(0.03)
